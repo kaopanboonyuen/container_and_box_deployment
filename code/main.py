@@ -99,9 +99,9 @@ class Container:
             dimension = item.get_dimension()
             
             if (
-                self.width < pivot[0] + dimension[0] or
-                self.height < pivot[1] + dimension[1] or
-                self.depth < pivot[2] + dimension[2]
+                self.width <= pivot[0] + dimension[0] or
+                self.height <= pivot[1] + dimension[1] or
+                self.depth <= pivot[2] + dimension[2]
             ):
                 continue
 
