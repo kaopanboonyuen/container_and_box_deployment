@@ -12,7 +12,7 @@ st.header(
 )
 
 st.subheader(
-    'Author: Fon'
+    'Author: Thanyarat Pornratthanatripoom (Student ID: 5901091810071)'
 )
 
 # st.subheader(
