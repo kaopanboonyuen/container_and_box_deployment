@@ -1,2 +1,2 @@
-# container_and_box_deployment
-3D Bin Packing: Effective Box, Pallet, Container Packing
+# RVModel
+The machine learning web application to predict future car residual value
