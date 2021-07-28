@@ -44,8 +44,10 @@ st.sidebar.header(
     'Input Box Condition'
 )
 
-StatusVar = st.sidebar.selectbox(
-    'Sorting by Size', ['Yes','No']
+
+
+Module = st.sidebar.selectbox(
+    'Sorting Models (Types)', ['Normal','Size','Height']
 )
 
 width = st.sidebar.slider(
@@ -78,7 +80,7 @@ depth = st.sidebar.slider(
 
 max_weight = st.sidebar.slider(
     'Size of Container (Max Weight)',
-    1, 10000, step = 1
+    1, 100000, step = 1
 )
 
 
@@ -101,19 +103,19 @@ max_weight = st.sidebar.slider(
 #         )
 
 
-status = bool(StatusVar)
-
-st.write("Algorithm Status", status, type(status))
-
 width = int(width)
 height = int(height)
 depth = int(depth)
 max_weight = int(max_weight)
 
-st.write("Container Width", width, type(width))
-st.write("Container Height", height, type(height))
-st.write("Container Depth", depth, type(depth))
-st.write("Container Max Weight", max_weight, type(max_weight))
+module = str(Module)
+
+st.write("Sorting Models (Types):", module, type(module))
+
+st.write("Container Width:", width, type(width))
+st.write("Container Height:", height, type(height))
+st.write("Container Depth:", depth, type(depth))
+st.write("Container Max Weight:", max_weight, type(max_weight))
 
 
 
@@ -184,7 +186,9 @@ if uploaded_file is not None:
         #     st.write("loop test: ", i)
 
 
-    NewPacker.pack(sorting_by_size=status)
+    #NewPacker.pack(sorting_by_size=status)
+    NewPacker.pack(status=module) # 'Normal', 'Size', 'Height'
+
 
     for b in NewPacker.bins:
         print(":::::::::::", b.string())
